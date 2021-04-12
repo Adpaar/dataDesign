@@ -1,0 +1,48 @@
+html, body {
+  height: 100%;
+}
+
+#map__container {
+  height: 100%;
+}
+
+#btn-zoom {
+  position: absolute;
+  top: 45px;
+  left: 10px;
+  z-index: 10;
+}
+
+#map__text {
+  position: absolute;
+  top: 0px;
+  left: 10px;
+  z-index: 10;
+}
+
+#map__container {
+  
+  width: 800px;
+  height: 700px;
+}
+
+#myTable tr:nth-child(2n){
+  background-color: aqua;
+}
+
+#myTable tr td{
+  padding: 5px 15px;
+}
+
+#myTable .vert {
+  color: green;
+}
+
+#myTable .rouge {
+  color: red;
+}
+
+.node:hover{
+  stroke-width: 7px !important;
+  opacity: 1 !important;
+}
