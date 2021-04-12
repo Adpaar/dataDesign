@@ -45,13 +45,6 @@ function mouseOutHandler(d, i) {
 }
 
 
-
-
-
-
-
-
-
 function clickHandler(d, i) {
   d3.select("#map__text").text(`You've selected ${d.properties.name}`)
   document.querySelector('#myTable').innerHTML = '' //On vide les données
@@ -63,6 +56,8 @@ function clickHandler(d, i) {
    let total = national[pays][annee] + international[pays][annee]
    let totalPrec = national[pays][annee-1] + international[pays][annee-1]
 
+   String(total).replace(/(.)(?=(\d{3})+$)/g,'$1,')
+
    /*--Delta + arrondi à deux chiffres--*/
    let delta = 100 * (totalPrec-total)/totalPrec *(-1)
    delta *= 100
@@ -70,35 +65,28 @@ function clickHandler(d, i) {
 
    /*--Couleur rouge ou verte du delta + gestion du NaN--*/
    let colonneDelta
-  if (!isNaN(delta)) 
-  {
-    if (delta > 0) 
+    if (!isNaN(delta)) 
     {
-      colonneDelta = `<td class="vert">${delta}</td>`
-    } else 
+      if (delta > 0) 
+      {
+        colonneDelta = `<td class="vert">${delta}%</td>`
+      } else 
+      {
+      colonneDelta = `<td class="rouge">${delta}%</td>`
+      }
+    } 
+    
+    else 
     {
-     colonneDelta = `<td class="rouge">${delta}</td>`
+      colonneDelta = `<td ></td>`
     }
-  } else 
-  {
-    colonneDelta = `<td ></td>`
-  }
-   /*--Génération du tableau--*/
 
-   ligne.innerHTML = `<td>${annee}</td><td>${national[pays][annee]}</td><td>${international[pays][annee]}</td><td>${total}</td>` + colonneDelta
-   document.querySelector('#myTable').insertBefore(ligne, null)
+    /*--Génération du tableau--*/
+    ligne.innerHTML = `<td>${annee}</td><td>${national[pays][annee]}</td><td>${international[pays][annee]}</td><td>${total}</td>` + colonneDelta
+    document.querySelector('#myTable').insertBefore(ligne, null)
   }
   
 }
-
-
-
-
-
-
-
-
-
 
 
 
@@ -109,7 +97,6 @@ function clickHandler(d, i) {
     .duration(ZOOM_DURATION)
     .call(zoom.scaleBy, zoomStep);
 }
-
 d3.select("#btn-zoom--in").on("click", () => clickToZoom(ZOOM_IN_STEP));
 d3.select("#btn-zoom--out").on("click", () => clickToZoom(ZOOM_OUT_STEP)); */
 
@@ -151,7 +138,7 @@ const path = d3.geoPath().projection(projection);
 const color = d3.scaleOrdinal(d3.schemeCategory20c.slice(1, 4));
 
 // --------------- Step 4 ---------------
-// 1. Plot the map from data source `hongkong`
+// 1. Plot the map from data source `europe`
 // 2. Place the district name in the map
 renderMap(europe);
 
@@ -186,16 +173,3 @@ function renderMap(root) {
     .attr("dy", d => _.get(d, "offset[1]", null))
     .text(d => d.properties.name);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,37 +1,59 @@
 html, body {
   height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+h1, h2 {
+  font-size: 48px;
+}
+
+h4 {
+  font-size: 24px;
+} 
+
+.hero {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+.country-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50vw;
+  margin-right: 24px;
+}
+
+.section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin-left: 24px;
+  margin-right: 24px;
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
 
 #map__container {
+  width: 50vw;
   height: 100%;
 }
 
-#btn-zoom {
-  position: absolute;
-  top: 45px;
-  left: 10px;
-  z-index: 10;
-}
-
-#map__text {
-  position: absolute;
-  top: 0px;
-  left: 10px;
-  z-index: 10;
-}
-
-#map__container {
-  
-  width: 800px;
-  height: 700px;
+#map__container svg{
+  display: block;
 }
 
 #myTable tr:nth-child(2n){
-  background-color: aqua;
+  background-color: #B4E2FF;
 }
 
 #myTable tr td{
-  padding: 5px 15px;
+  padding: 10px 25px;
+  color: #0C76BA;
+  font-weight: 600;
+  text-align: left;
 }
 
 #myTable .vert {
@@ -45,4 +67,30 @@ html, body {
 .node:hover{
   stroke-width: 7px !important;
   opacity: 1 !important;
+}
+
+#my_dataviz {
+  box-shadow: 0 4px 24px 0 rgba(205,230,254,100);
+  border: solid #CDE6FE;
+  border-width: 1px;
+  border-radius: 7px;
+}
+
+.tooltip{
+  width: 48%;
+  float: left;
+}
+
+.dates{
+  display: flex;
+  justify-content: space-around;
+}
+
+.mosaique_viz {
+  display: flex;
+  width: 100%;
+  box-shadow: 0 4px 24px 0 rgba(205,230,254,100);
+  border: solid #CDE6FE;
+  border-width: 1px;
+  border-radius: 7px;
 }
