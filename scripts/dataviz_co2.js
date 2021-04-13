@@ -1,12 +1,12 @@
 // append the svg object to the body of the page
-var svg = d3.select("#my_dataviz4")
+var svg5 = d3.select("#dataviz_co2")
   .append("svg")
-    .attr("width", 900)
-    .attr("height", 500)
-    .style('background', 'antiqueWhite');
+    .attr("width", "100%")
+    .attr("height", "75vh")
+    .style('background', 'white');
 
 // Read data
-d3.csv("/bubble7.csv", function(data) {
+d3.csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vSRaQrwXRDMv6ppmX554f3104blJH6tE-x0-NCRT6iy0lseGziUbcG2ZTqP_3nbHGzr0t4SS6Ny-g3b/pub?gid=853471467&single=true&output=csv", function(data) {
   
 
   // Filter a bit the data -> more than 1 million inhabitants
@@ -46,7 +46,7 @@ d3.csv("/bubble7.csv", function(data) {
     .range([4,180])  // circle will be between 7 and 55 px wide
 
   // create a tooltip
-  var Tooltip = d3.select("#my_dataviz4")
+  var Tooltip = d3.select("#dataviz_co2")
     .append("div")
     .style("opacity", 0)
     .attr("class", "tooltip")
@@ -73,7 +73,7 @@ d3.csv("/bubble7.csv", function(data) {
   }
 
   // Initialize the circle: all located at the center of the svg area
-  var node = svg.append("g")
+  var node = svg5.append("g")
     .selectAll("circle")
     .data(data)
     .enter()
@@ -82,7 +82,7 @@ d3.csv("/bubble7.csv", function(data) {
       .attr("r", function(d){ return size(d.value1)})
       .attr("cx", width /2)
       .attr("cy", height /2)
-      .style("fill", "blue")
+      .style("fill", "#B4E2FF")
       .style("fill-opacity", 0.8)
       .attr("stroke", "black")
       .style("stroke-width", 1)
@@ -148,7 +148,7 @@ d3.csv("/bubble7.csv", function(data) {
 
 
 // Read data
-d3.csv("/bubble8.csv", function(data) {
+d3.csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vQ4tPdMV_rTwfyfweOuD7vUM1LGzkCHOKEWqtG02Az7eQTM2TyA7SaMDfcVCeNIWvE_uNH2ugYkxEaE/pub?gid=1960522940&single=true&output=csv", function(data) {
   
 
   // Filter a bit the data -> more than 1 million inhabitants
@@ -188,7 +188,7 @@ d3.csv("/bubble8.csv", function(data) {
     .range([4,330])  // circle will be between 7 and 55 px wide
 
   // create a tooltip
-  var Tooltip = d3.select("#my_dataviz4")
+  var Tooltip = d3.select("#dataviz_co2")
     .append("div")
     .style("opacity", 0)
     .attr("class", "tooltip")
@@ -215,7 +215,7 @@ d3.csv("/bubble8.csv", function(data) {
   }
 
   // Initialize the circle: all located at the center of the svg area
-  var node = svg.append("g")
+  var node = svg5.append("g")
     .selectAll("circle")
     .data(data)
     .enter()
@@ -224,7 +224,7 @@ d3.csv("/bubble8.csv", function(data) {
       .attr("r", function(d){ return size(d.value2)})
       .attr("cx", width /1.01)
       .attr("cy", height /2)
-      .style("fill", "red")
+      .style("fill", "#33A2E9")
       .style("fill-opacity", 0.8)
       .attr("stroke", "black")
       .style("stroke-width", 1)

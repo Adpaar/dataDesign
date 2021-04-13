@@ -6,7 +6,7 @@ var svg3 = d3.select("#dataviz_litre")
     .style('background', 'white');
 
 // Read data
-d3.csv("../data/bubble3.csv", function(data) {
+d3.csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vRjBaMNtXZzyGg7mKLy8G-kxVxheciU_UnvH_bl46_jVATEpVIuJfThVB0K7YRXjekkJtn7tc22Fz6d/pub?gid=612539542&single=true&output=csv", function(data) {
   
 
   // Filter a bit the data -> more than 1 million inhabitants
@@ -148,7 +148,7 @@ d3.csv("../data/bubble3.csv", function(data) {
 
 
 // Read data
-d3.csv("../data/bubble4.csv", function(data) {
+d3.csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vRuoAJ9CuMC-zqLZB8MSZYfzR7-BkrWZqqXi9B7Lk1OXLDXTED-q1HpG_kYWbPpUFwjeZnL2f_9vjOn/pub?gid=67638432&single=true&output=csv", function(data) {
   
 
   // Filter a bit the data -> more than 1 million inhabitants

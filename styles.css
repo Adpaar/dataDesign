@@ -9,6 +9,7 @@ h1, h2 {
 
 h4 {
   font-size: 24px;
+  text-align: center;
 } 
 
 .hero {
@@ -93,4 +94,19 @@ h4 {
   border: solid #CDE6FE;
   border-width: 1px;
   border-radius: 7px;
+}
+
+/* .viz{
+  justify-content: space-around;
+  width: 33%;
+} */
+
+.viz{
+  width: 100%;
+  box-shadow: 0 4px 24px 0 rgba(205,230,254,100);
+  border: solid #CDE6FE;
+  border-width: 1px;
+  border-radius: 7px;
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
