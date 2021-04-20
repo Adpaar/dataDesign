@@ -1,14 +1,14 @@
 // set the dimensions and margins of the graph
 var width = window.innerWidth/2
-var height = 800
+var height = 450
 
 // append the svg object to the body of the page
 var svg2 = d3.select("#my_dataviz")
   .append("svg")
-    .attr("width", "100%")
-    .attr("height", "75vh")
+  .attr("width", width2 + margin.left + margin.right)
+  .attr("height", 370 + margin.top + margin.bottom)
     .style("border-radius", "10px")
-    .style('background', 'white')
+    .style('background', 'f9f9f9')
 
 // Read data
 d3.csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vRZqsNNA-OFsnjDKpcDA2JVg75r28hR3-CDfhA68r1q-g1Kbwp9Pnj5U9j_s9sRfMi7r5rQ02zWmMBk/pub?gid=1064567575&single=true&output=csv", function(data) {
@@ -101,7 +101,7 @@ d3.csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vRZqsNNA-OFsnjDKpcDA2JVg
   
   // Features of the forces applied to the nodes:
   var simulation = d3.forceSimulation()
-      .force("center", d3.forceCenter().x(width / 2).y(height / 2)) // Attraction to the center of the svg area
+      .force("center", d3.forceCenter().x(width / 2.2).y(height / 2)) // Attraction to the center of the svg area
       .force("charge", d3.forceManyBody().strength(.1)) // Nodes are attracted one each other of value is > 0
       .force("collide", d3.forceCollide().strength(.4).radius(function(d){ return (size(d.value1)+3) }).iterations(1)) // Force that avoids circle overlapping
       
@@ -224,7 +224,7 @@ d3.csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vT7OaLx_ncV4KMDlGIca0TMN
     .append("circle")
       .attr("class", "node")
       .attr("r", function(d){ return size(d.value2)})
-      .attr("cx", width /1.01)
+      .attr("cx", width /8)
       .attr("cy", height /2)
       .style("fill", "#33A2E9")
       .style("fill-opacity", 0.8)
@@ -241,7 +241,7 @@ d3.csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vT7OaLx_ncV4KMDlGIca0TMN
   
   // Features of the forces applied to the nodes:
   var simulation = d3.forceSimulation()
-      .force("center", d3.forceCenter().x(width /0.8).y(height / 2)) // Attraction to the center of the svg area
+      .force("center", d3.forceCenter().x(width /0.7119).y(height / 2)) // Attraction to the center of the svg area
       .force("charge", d3.forceManyBody().strength(.1)) // Nodes are attracted one each other of value is > 0
       .force("collide", d3.forceCollide().strength(.4).radius(function(d){ return (size(d.value2)+3) }).iterations(1)) // Force that avoids circle overlapping
       
@@ -278,3 +278,12 @@ d3.csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vT7OaLx_ncV4KMDlGIca0TMN
   }
 
 })
+
+new fullpage('#fullpage', {
+	//options here
+	autoScrolling:true,
+	scrollHorizontally: true
+});
+
+//methods
+fullpage_api.setAllowScrolling(true);

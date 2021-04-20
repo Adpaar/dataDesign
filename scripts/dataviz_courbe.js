@@ -1,7 +1,7 @@
 // set the dimensions and margins of the graph
-var margin = {top: 10, right: 30, bottom: 30, left: 100},
-    width2 = 1200 - margin.left - margin.right,
-    height2 = 400 - margin.top - margin.bottom;
+var margin = {top: 10, right: 30, bottom: 30, left: 220},
+    width2 = 1100 - margin.left - margin.right,
+    height2 = 300 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
 var svg7 = d3.select("#dataviz_courbe")
@@ -21,6 +21,7 @@ d3.csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vSqvr7-BCnRzhxbHdblrO_Sd
     .entries(data);
 
   // Add X axis --> it is a date format
+  
   
   var x = d3.scaleLinear()
     .domain(d3.extent(data, function(d) { return d.year; }))
@@ -47,15 +48,19 @@ d3.csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vSqvr7-BCnRzhxbHdblrO_Sd
       .data(sumstat)
       .enter()
       .append("path")
+      
         .attr("fill", "none")
         .attr("stroke", function(d){ return color(d.key) })
         .attr("stroke-width", 3)
+        .transition()
+      .duration(10000)
         .attr("d", function(d){
           return d3.line()
             .x(function(d) { return x(d.year); })
             .y(function(d) { return y(+d.n); })
             (d.values)
         })
+        
 
 })
 

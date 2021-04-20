@@ -25,6 +25,24 @@ const ZOOM_DURATION = 500;
 const ZOOM_IN_STEP = 2;
 const ZOOM_OUT_STEP = 1 / ZOOM_IN_STEP;
 const HOVER_COLOR = "#d36f80"
+// hide an element
+const hide = (elem) => {
+  elem.style.visibility = 'hidden';
+}
+
+// show an element
+const show = (elem) => {
+  elem.style.visibility = 'visible';
+}
+// hide an element
+const hide2 = (elem) => {
+  elem.style.justifyContent = '';
+}
+
+// show an element
+const show2 = (elem) => {
+  elem.style.justifyContent = 'center';
+}
 
 // --------------- Event handler ---------------
 const zoom = d3
@@ -43,6 +61,9 @@ function mouseOverHandler(d, i) {
 function mouseOutHandler(d, i) {
   d3.select(this).attr("fill", color(i))
 }
+
+hide(document.querySelector('.bg-info'));
+show2(document.querySelector('.country-info'));
 
 
 function clickHandler(d, i) {
@@ -85,6 +106,8 @@ function clickHandler(d, i) {
     ligne.innerHTML = `<td>${annee}</td><td>${national[pays][annee]}</td><td>${international[pays][annee]}</td><td>${total}</td>` + colonneDelta
     document.querySelector('#myTable').insertBefore(ligne, null)
   }
+  show(document.querySelector('.bg-info'));
+  hide2(document.querySelector('.country-info'));
   
 }
 
@@ -127,7 +150,7 @@ g
 // projection config.
 const projection = d3
   .geoMercator()
-  .center([22.2653, 53.2596])
+  .center([22.2653, 56.2596])
   .scale(500)
   .translate([WIDTH / 2, HEIGHT / 2]);
 

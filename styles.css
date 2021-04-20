@@ -1,41 +1,86 @@
 html, body {
-  height: 100%;
+  
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  
+    background: #f9f9f9;
 }
 
-h1, h2 {
-  font-size: 48px;
+h1 {
+  font-size: 44px;
+}
+
+h2 {
+  font-size: 24px;
+  text-align: center;
+  margin-top: 30px;
+  
 }
 
 h4 {
   font-size: 24px;
   text-align: center;
+  margin-top: 30px;
 } 
 
-.hero {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
+/* ***** INTRO ***** */
+.section2 {
+  padding: 10%;
+  position: relative;
+}
+.section2 h2 {
+    margin-top: 40px ;
+    margin-bottom: 60px ;
+    font-size: 28px;
+    text-align: left;
+  }
+
+.scroll-indicator {	
+	position: absolute;
+	left: 50%;
+	top: 600px;
+	font-size: 40px;
+	
+	-webkit-animation: bounce 1s infinite; 
+	animation: bounce 1s infinite;
 }
 
-.country-info {
+@-webkit-keyframes bounce {
+	 0% { top: 95%; }
+	 50%   { top: 100%; }
+	 100% { top: 95%; }
+}
+
+@keyframes bounce {
+	 0% { top: 95%; }
+	 50%   { top: 100%; }
+	 100% { top: 95%; }
+}
+/* ***** GRAPH ***** */
+
+.viz2 {
+  padding: 3%;
+}
+
+#dataviz_courbe {
+    margin-top: 100px;
+    left: 70px;
+  }
+.legende {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  
   justify-content: center;
-  width: 50vw;
-  margin-right: 24px;
+  align-items: center;
+  
+}
+#natio {
+  color:#0C76BA;
+  margin-right: 50px;
+}
+#inter {
+  color:#b4dcff;
 }
 
-.section {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  margin-left: 24px;
-  margin-right: 24px;
-  margin-top: 100px;
-  margin-bottom: 100px;
-}
+/* ***** MAP ***** */
 
 #map__container {
   width: 50vw;
@@ -51,10 +96,11 @@ h4 {
 }
 
 #myTable tr td{
-  padding: 10px 25px;
+  padding: 6px 15px;
   color: #0C76BA;
   font-weight: 600;
   text-align: left;
+  font-size: 12px;
 }
 
 #myTable .vert {
@@ -64,6 +110,33 @@ h4 {
 #myTable .rouge {
   color: red;
 }
+.hero {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+.country-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  width: 50vw;
+  
+  margin-top: 45px;
+  margin-right: 24px;
+}
+
+.section1 {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin-left: 24px;
+  margin-right: 24px;
+  margin-top: 80px;
+  
+}
+/* ***** VIZ ***** */
 
 .node:hover{
   stroke-width: 7px !important;
@@ -71,20 +144,33 @@ h4 {
 }
 
 #my_dataviz {
-  box-shadow: 0 4px 24px 0 rgba(205,230,254,100);
-  border: solid #CDE6FE;
+  
   border-width: 1px;
   border-radius: 7px;
+  position: relative;
+  
 }
 
 .tooltip{
-  width: 48%;
+  width: 12%;
+  position: absolute;
+  z-index: 10;
   float: left;
+  background-color: #f9f9f9;
 }
 
 .dates{
   display: flex;
   justify-content: space-around;
+  
+}
+/* ***** Liters ***** */
+
+#dataviz_litre {
+  
+  border-width: 1px;
+  border-radius: 7px;
+  position: relative;
 }
 
 .mosaique_viz {
@@ -103,10 +189,17 @@ h4 {
 
 .viz{
   width: 100%;
-  box-shadow: 0 4px 24px 0 rgba(205,230,254,100);
-  border: solid #CDE6FE;
+  background: #f9f9f9;
   border-width: 1px;
   border-radius: 7px;
-  margin-top: 100px;
-  margin-bottom: 100px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+/* ***** CO2 ***** */
+
+#dataviz_co2 {
+  
+  border-width: 1px;
+  border-radius: 7px;
+  position: relative;
 }

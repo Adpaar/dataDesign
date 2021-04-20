@@ -3,7 +3,7 @@ var svg5 = d3.select("#dataviz_co2")
   .append("svg")
     .attr("width", "100%")
     .attr("height", "75vh")
-    .style('background', 'white');
+    .style('background', 'f9f9f9');
 
 // Read data
 d3.csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vSRaQrwXRDMv6ppmX554f3104blJH6tE-x0-NCRT6iy0lseGziUbcG2ZTqP_3nbHGzr0t4SS6Ny-g3b/pub?gid=853471467&single=true&output=csv", function(data) {
@@ -63,7 +63,7 @@ d3.csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vSRaQrwXRDMv6ppmX554f310
   }
   var mousemove = function(d) {
     Tooltip
-      .html('<u>' + d.pays + '</u>' + "<br>" + formatCash(d.value1) + " kg de C02 émis dans l'atmosphère")
+      .html('<u>' + d.pays + '</u>' + "<br>" + formatCash((d.value1)/1000) + " tons of CO2 emitted")
       .style("left", (d3.mouse(this)[0]+20) + "px")
       .style("top", (d3.mouse(this)[1]) + "px")
   }
@@ -97,7 +97,7 @@ d3.csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vSRaQrwXRDMv6ppmX554f310
   
   // Features of the forces applied to the nodes:
   var simulation = d3.forceSimulation()
-      .force("center", d3.forceCenter().x(width / 2).y(height / 2)) // Attraction to the center of the svg area
+      .force("center", d3.forceCenter().x(width / 2.2).y(height / 2)) // Attraction to the center of the svg area
       .force("charge", d3.forceManyBody().strength(.1)) // Nodes are attracted one each other of value is > 0
       .force("collide", d3.forceCollide().strength(.4).radius(function(d){ return (size(d.value1)+3) }).iterations(1)) // Force that avoids circle overlapping
       
@@ -205,7 +205,7 @@ d3.csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vQ4tPdMV_rTwfyfweOuD7vUM
   }
   var mousemove = function(d) {
     Tooltip
-      .html('<u>' + d.pays + '</u>' + "<br>" + formatCash(d.value2) + " kg de C02 émis dans l'atmosphère")
+      .html('<u>' + d.pays + '</u>' + "<br>" + formatCash((d.value2)/1000) + " tons of CO2 emitted")
       .style("left", (d3.mouse(this)[0]+20) + "px")
       .style("top", (d3.mouse(this)[1]) + "px")
   }
@@ -239,7 +239,7 @@ d3.csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vQ4tPdMV_rTwfyfweOuD7vUM
   
   // Features of the forces applied to the nodes:
   var simulation = d3.forceSimulation()
-      .force("center", d3.forceCenter().x(width /0.8).y(height / 2)) // Attraction to the center of the svg area
+      .force("center", d3.forceCenter().x(width /0.7119).y(height / 2)) // Attraction to the center of the svg area
       .force("charge", d3.forceManyBody().strength(.1)) // Nodes are attracted one each other of value is > 0
       .force("collide", d3.forceCollide().strength(.4).radius(function(d){ return (size(d.value2)+3) }).iterations(1)) // Force that avoids circle overlapping
       

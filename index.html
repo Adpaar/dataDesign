@@ -12,36 +12,102 @@
   <title>Air traffic in Europe before and after COVID-19</title>
 </head>
 <body>
-  <div class="hero">
-    <div class="country-info">
-      <h1 id="map__text">Select a country</h1>
-      <table class="table table-striped">
-        <thead class="bg-info">
-            <tr>
-              <th>Year</th>
-              <th>National</th>
-              <th>International</th>
-              <th>Total</th>
-              <th>Delta</th>
-            </tr>
-        </thead>
-        <tbody id="myTable"></tbody>
-      </table>
+  
+  <main id="fullpage">
+    <div class="section ">
+      <div class="section2">
+        <h1>Air traffic in Europe before and after COVID-19</h1>
+      <h2>Covid-19 has had a big impact on our lives and we wanted to know what impact it has had on air traffic. <br> So we collected data and decided to transform it in data vizualisation. </h2>
+      <h4><a href="https://ec.europa.eu/eurostat/databrowser/view/AVIA_PAOC__custom_687581/default/table?lang=en">Here is the dataset used</a></h4>
+      <div class="scroll-indicator fa fa-chevron-down"></div>
     </div>
-    
-    <div id="map__container"></div>
+      </div>
+      
+    <div class="section">
+      
+      
+      <div class="viz2">
+      <h2>Evolution of the number of passengers in Europe from 2005 to 2020</h2>
 
+        <div id="dataviz_courbe"></div>
+      </div>
+      <div class="legende">
+        <!-- <svg width= "900" height="100" style="background: #f9f9f9;">
+          <circle cx="150" cy="45" r="10" fill="#33A2E9"></circle>
+          
+          <circle cx="400" cy="45" r="10" fill="#B4E2FF"></circle>
+
+        </svg> -->
+        <p id="natio">National passengers</p>
+        <p id="inter">International passengers</p>
+      </div>
+    </div>
+	<div class="section section1">
+    <div class="hero">
+      <div class="country-info">
+        <h2 id="map__text">Select a country</h2>
+        <table class="table table-striped">
+          <thead class="bg-info">
+              <tr>
+                <th>Year</th>
+                <th>National</th>
+                <th>International</th>
+                <th>Total</th>
+                <th>Delta</th>
+              </tr>
+          </thead>
+          <tbody id="myTable"></tbody>
+        </table>
+      </div>
+      
+      <div id="map__container"></div>
+  
+    </div>
   </div>
   
-  <div class="section">
-    <h2>Number of passengers per country</h2>
-    <div class="dates">
-      <h4>2019</h4>
-      <h4>2020</h4>
+	<div class="section">
+    <div class="viz2">
+      <h2>Number of passengers per country</h2>
+      <div class="dates">
+        <h4>2019</h4>
+        <h4>2020</h4>
+      </div>
+      <div id="my_dataviz"></div>
     </div>
+      
     
-    <div id="my_dataviz"></div>
   </div>
+	<div class="section">
+    <div class="viz2">
+      <h4>Kerosene consumed in barrels (159 liters)</h4>
+      <div class="dates">
+        <h4>2019</h4>
+        <h4>2020</h4>
+      </div>
+      <div id="dataviz_litre"></div>
+    </div>
+  </div>
+	<!-- <div class="section">
+    <div class="viz">
+      <h4>Total kerosene expenses in $</h4>
+      <div id="dataviz_prix"></div>
+    </div>
+  </div> -->
+	<div class="section">
+    <div class="viz2">
+      <h4>CO2 emitted in metric tons</h4>
+      <div class="dates">
+        <h4>2019</h4>
+        <h4>2020</h4>
+      </div>
+      <div id="dataviz_co2"></div>
+    </div>
+  </div>
+	
+</main>
+  
+  
+  
 
   <!-- <div class="section">
     <div class="mosaique_viz">
@@ -60,35 +126,19 @@
     </div>
   </div> -->
 
-  <div class="section">
-    <div class="viz">
-      <h4>Kerosene consumed in liters</h4>
-      <div id="dataviz_litre"></div>
-    </div>
-    <div class="viz">
-      <h4>Total kerosene expenses in $</h4>
-      <div id="dataviz_prix"></div>
-    </div>
-    <div class="viz">
-      <h4>CO2 emitted in kg</h4>
-      <div id="dataviz_co2"></div>
-    </div>
-    <div class="viz">
-      <h4>Evolution of the number of passengers</h4>
-      <div id="dataviz_courbe"></div>
-    </div>
-  </div>
+
   
   
 
   <script type="text/javascript" src="data/dataset_national.js"></script>
   <script type="text/javascript" src="data/dataset_international.js"></script>
-  <script src="scripts/app.js"></script>
   <script src="scripts/europe.js"></script>
   <script src="scripts/map.js"></script>
   <script src="scripts/dataviz_litre.js"></script>
   <script src="scripts/dataviz_prix.js"></script>
   <script src="scripts/dataviz_co2.js"></script>
   <script src="scripts/dataviz_courbe.js"></script>
+  <script src="scripts/fullpage.js"></script>
+  <script src="scripts/app.js"></script>
 </body>
 </html>
